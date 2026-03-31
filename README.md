@@ -9,17 +9,12 @@ create a databricks notebook code which has code to connect to sharepoint using 
 SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 
 ### Step 2) above generated following code
-### Databricks notebook source
-
-### COMMAND ----------
-
 ## Install required libraries (run this cell first if not installed)
 ## %pip install office365-rest-python-client azure-identity requests
 
 ### Step 3) create a databricks notebook and paste the code. 
+### Databricks notebook source
 ##### Make neccsary changes and only try in local
-##### COMMAND ----------
-
 from azure.identity import CertificateCredential
 from office365.sharepoint.client_context import ClientContext
 import requests
