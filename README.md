@@ -10,7 +10,7 @@ SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 
 ### Step 2) above generated following code
 ## Install required libraries (run this cell first if not installed)
-## %pip install office365-rest-python-client azure-identity requests
+## pip install office365-rest-python-client azure-identity requests
 
 ### Step 3) create a databricks notebook and paste the code. 
 ### Databricks notebook source
