@@ -1,14 +1,14 @@
-### dbx_sharepoint_cert
-Disclaimer
-----------
-Following is a sample only for trying in local or development environment where users are not impacted
 
-Step 1) The code was generated using github copilot as a boiler plate code
+###Disclaimer
+----------
+### Following is a sample only for trying in local or development environment where users are not impacted
+
+### Step 1) The code was generated using github copilot as a boiler plate code
 To reproduct, open VS code. Launch the  Github copilot chat window . Type the following prompt
 create a databricks notebook code which has code to connect to sharepoint using certificate. it should be able to write to a list
 SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 
-Step 2) above generated following code
+### Step 2) above generated following code
 ### Databricks notebook source
 
 ### COMMAND ----------
