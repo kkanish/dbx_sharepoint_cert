@@ -15,27 +15,27 @@ SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 ### Step 3) create a databricks notebook and paste the code. 
 ### Databricks notebook source
 ##### Make neccsary changes and only try in local
-from azure.identity import CertificateCredential
-from office365.sharepoint.client_context import ClientContext
-import requests
+from azure.identity import CertificateCredential   
+from office365.sharepoint.client_context import ClientContext  
+import requests \  
 
 #### COMMAND ----------
 
 #### Configuration - Replace with your values
-TENANT_ID = "your-tenant-id" \n
-CLIENT_ID = "your-client-id" \n
-CERTIFICATE_PATH = "/dbfs/path/to/your/certificate.pem"  # Path to certificate in DBFS
-SHAREPOINT_SITE_URL = "https://anishtest.sharepoint.com/sites/somelisttracker"
-LIST_NAME = "YourListName"  # Name of the SharePoint list
+TENANT_ID = "your-tenant-id"   
+CLIENT_ID = "your-client-id"   
+CERTIFICATE_PATH = "/dbfs/path/to/your/certificate.pem"  # Path to certificate in DBFS  
+SHAREPOINT_SITE_URL = "https://anishtest.sharepoint.com/sites/somelisttracker"  
+LIST_NAME = "YourListName"  # Name of the SharePoint list  
 
-#### COMMAND ----------
+#### COMMAND ----------  
 
-#### Authenticate using certificate
-credential = CertificateCredential(
-    tenant_id=TENANT_ID,
-    client_id=CLIENT_ID,
-    certificate_path=CERTIFICATE_PATH
-)
+#### Authenticate using certificate  
+credential = CertificateCredential(  
+    tenant_id=TENANT_ID,  
+    client_id=CLIENT_ID,  
+    certificate_path=CERTIFICATE_PATH  
+)  
 
 #### Get access token
 token = credential.get_token("https://anishtest.sharepoint.com/.default")
