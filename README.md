@@ -1,4 +1,4 @@
-# dbx_sharepoint_cert
+### dbx_sharepoint_cert
 Disclaimer
 ----------
 Following is a sample only for trying in local or development environment where users are not impacted
@@ -9,55 +9,55 @@ create a databricks notebook code which has code to connect to sharepoint using 
 SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 
 Step 2) above generated following code
-## Databricks notebook source
+### Databricks notebook source
 
-## COMMAND ----------
+### COMMAND ----------
 
 # Install required libraries (run this cell first if not installed)
 # %pip install office365-rest-python-client azure-identity requests
 
-# COMMAND ----------
+### COMMAND ----------
 
 from azure.identity import CertificateCredential
 from office365.sharepoint.client_context import ClientContext
 import requests
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Configuration - Replace with your values
+#### Configuration - Replace with your values
 TENANT_ID = "your-tenant-id"
 CLIENT_ID = "your-client-id"
 CERTIFICATE_PATH = "/dbfs/path/to/your/certificate.pem"  # Path to certificate in DBFS
 SHAREPOINT_SITE_URL = "https://anishtest.sharepoint.com/sites/somelisttracker"
 LIST_NAME = "YourListName"  # Name of the SharePoint list
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Authenticate using certificate
+#### Authenticate using certificate
 credential = CertificateCredential(
     tenant_id=TENANT_ID,
     client_id=CLIENT_ID,
     certificate_path=CERTIFICATE_PATH
 )
 
-# Get access token
+#### Get access token
 token = credential.get_token("https://anishtest.sharepoint.com/.default")
 access_token = token.token
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Connect to SharePoint site
+#### Connect to SharePoint site
 ctx = ClientContext(SHAREPOINT_SITE_URL).with_credentials(credential)
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Get the list
+#### Get the list
 list_obj = ctx.web.lists.get_by_title(LIST_NAME)
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Example: Add an item to the list
-# Replace with your actual field names and values
+#### Example: Add an item to the list
+#### Replace with your actual field names and values
 item_properties = {
     "Title": "Sample Item",
     "Field1": "Value1",
@@ -69,9 +69,9 @@ ctx.execute_query()
 
 print(f"Item added with ID: {list_item.id}")
 
-# COMMAND ----------
+#### COMMAND ----------
 
-# Optional: Query existing items
+#### Optional: Query existing items
 items = list_obj.items.get().execute_query()
 for item in items:
     print(item.properties)
