@@ -38,40 +38,38 @@ credential = CertificateCredential(
 )  
 
 #### Get access token
-token = credential.get_token("https://anishtest.sharepoint.com/.default")
-access_token = token.token
+token = credential.get_token("https://anishtest.sharepoint.com/.default")  
+access_token = token.token  
 
 #### COMMAND ----------
 
 #### Connect to SharePoint site
-ctx = ClientContext(SHAREPOINT_SITE_URL).with_credentials(credential)
+ctx = ClientContext(SHAREPOINT_SITE_URL).with_credentials(credential)  
 
 #### COMMAND ----------
 
 #### Get the list
-list_obj = ctx.web.lists.get_by_title(LIST_NAME)
+list_obj = ctx.web.lists.get_by_title(LIST_NAME)  
 
 #### COMMAND ----------
 
-#### Example: Add an item to the list
-#### Replace with your actual field names and values
-item_properties = {
-    "Title": "Sample Item",
-    "Field1": "Value1",
-    "Field2": "Value2"
-}
+#### Example: Add an item to the list  
+#### Replace with your actual field names and values  
+item_properties = {  
+    "Title": "Sample Item",  
+    "Field1": "Value1",  
+    "Field2": "Value2"  
+}  
 
-list_item = list_obj.add_item(item_properties)
-ctx.execute_query()
+list_item = list_obj.add_item(item_properties)   
+ctx.execute_query()  
 
-print(f"Item added with ID: {list_item.id}")
+print(f"Item added with ID: {list_item.id}")  
 
 #### COMMAND ----------
 
 #### Optional: Query existing items
-items = list_obj.items.get().execute_query()
-for item in items:
-    print(item.properties)
-
-
+items = list_obj.items.get().execute_query()  
+for item in items:  
+    print(item.properties)  
 
