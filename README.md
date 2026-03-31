@@ -27,6 +27,8 @@ CLIENT_ID = "your-client-id"
 CERTIFICATE_PATH = "/dbfs/path/to/your/certificate.pem"  # Path to certificate in DBFS  
 SHAREPOINT_SITE_URL = "https://anishtest.sharepoint.com/sites/somelisttracker"  
 LIST_NAME = "YourListName"  # Name of the SharePoint list  
+##### if you are using unity catalog, upload it to a volumn then replate certificate_path with following reference
+###### CERTIFICATE_PATH = "/Volumes/your_catalog/your_schema/your_volume/certificate.pem"  # Path to certificate in Unity Catalog volume
 
 #### COMMAND ----------  
 
