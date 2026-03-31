@@ -22,8 +22,8 @@ import requests
 #### COMMAND ----------
 
 #### Configuration - Replace with your values
-TENANT_ID = "your-tenant-id"
-CLIENT_ID = "your-client-id"
+TENANT_ID = "your-tenant-id" \n
+CLIENT_ID = "your-client-id" \n
 CERTIFICATE_PATH = "/dbfs/path/to/your/certificate.pem"  # Path to certificate in DBFS
 SHAREPOINT_SITE_URL = "https://anishtest.sharepoint.com/sites/somelisttracker"
 LIST_NAME = "YourListName"  # Name of the SharePoint list
