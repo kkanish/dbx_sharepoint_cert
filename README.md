@@ -17,7 +17,7 @@ SharePoint site: https://anishtest.sharepoint.com/sites/somelisttracker
 ##### Make neccsary changes and only try in local
 from azure.identity import CertificateCredential   
 from office365.sharepoint.client_context import ClientContext  
-import requests \  
+import requests  
 
 #### COMMAND ----------
 
